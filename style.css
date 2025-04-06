@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container{
+    width: 120vh;
+    height: 80vh;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #E4EFE7;
+    border-radius: 2rem;
+    border: 5px solid #99BC85;
+}
+.pics{
+    height: 150px;
+    width: auto;
+    cursor: pointer;
+}
+#user-choise{
+    display: flex;
+    gap: 100px;
+}
+#result{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+#player,#computer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
