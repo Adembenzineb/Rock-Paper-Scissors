@@ -11,21 +11,22 @@
     <div id="container">
         <h1>Rock Paper Scissors Game</h1>
         <div id="user-choise">
-            <img src="/imgs/rock.png" alt="rock" class="pics">
-            <img src="/imgs/paper.png" alt="paper" class="pics">
-            <img src="/imgs/scissors.png" alt="Scissors" class="pics">
+            <img src="/imgs/rock.png" alt="rock" class="pics" onclick="rock()">
+            <img src="/imgs/paper.png" alt="paper" class="pics" onclick="paper()">
+            <img src="/imgs/scissors.png" alt="Scissors" class="pics" onclick="scissors()">
         </div>
+        <h2 id="rounds">Round 0</h2>
         <div id="computer-choise">
             <img src="" alt="computer-choise">
         </div>
         <div id="result">
             <div id="computer">
                 <h2>Computer score</h2>
-                <h2 id="computer-score">0</h2>
+                <h2 id="C_SC"></h2>
             </div>
             <div id="player">
                 <h2>User score</h2>
-                <h2 id="player-score">0</h2>
+                <h2 id="player-score"></h2>
             </div>
         </div>
 
