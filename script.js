@@ -25,13 +25,13 @@ function Computer_choise(){
 
 
 let p = 0
-function paper(){ p += 1 ;verif();}
+function paper(){ p += 1 ;playGround();}
 
 let r = 0
-function rock(){ r += 1 ;verif();}
+function rock(){ r += 1 ;playGround();}
 
 let s = 0
-function scissors(){ s += 1 ;verif();}
+function scissors(){ s += 1 ;playGround();}
 
 function Player_choise(p,r,s){
     let choise = ""
@@ -45,15 +45,6 @@ function Player_choise(p,r,s){
     return choise
 }
 
-function verif(){
-if (p > 0 | r > 0 | s > 0){
-    console.log(`Your choise is ${Player_choise(p,r,s)}`)
-    console.log(`The Computer choise is ${Computer_choise()}`)
-    p = 0
-    r = 0
-    s = 0
-}
-}
 function winner(){
     let computer = Computer_choise();
     let player = Player_choise(p,r,s);
@@ -71,4 +62,25 @@ function winner(){
         res = "player"
     }
     return res
+}
+
+function playGround(){
+    if (p > 0 | r > 0 | s > 0){
+        let winner = winner() ;
+
+        if (winner == "computer"){
+            Computer_score ++;
+        }else if (winner == "player"){
+            Player_score ++;
+        }else{
+            Computer_score += 0.5;
+            Player_score += 0.5;
+        }
+
+        round ++;
+
+        p = 0;
+        r = 0;
+        s = 0;
+    }
 }
