@@ -7,7 +7,6 @@ function Computer_choise_number(){
     let max = 3;
     let min = 1;
     let Comp_choise_n = Math.trunc(Math.random()*(max-min+1)+min);
-    console.log(Comp_choise_n)
     return Comp_choise_n
 }
 
@@ -54,4 +53,22 @@ if (p > 0 | r > 0 | s > 0){
     r = 0
     s = 0
 }
+}
+function winner(){
+    let computer = Computer_choise();
+    let player = Player_choise(p,r,s);
+
+    let res = "";
+    if (computer == player){
+        res = "draw"
+    }else if (computer == "paper" && player == "rock") {
+        res = "computer"
+    }else if (computer == "rock" && player == "scissors") {
+        res = "computer"
+    }else if (computer == "scissors" && player == "paper") {
+        res = "computer"
+    }else{
+        res = "player"
+    }
+    return res
 }
