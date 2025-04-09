@@ -3,6 +3,14 @@ let Computer_score = 0;
 let Player_score = 0;
 let round = 0
 
+const imagePaths = {
+    choisesImgs: {
+      1: '/imgs/rock.png',
+      2: '/imgs/paper.png', 
+      3: '/imgs/scissors.png',
+    }
+}
+
 function Computer_choise_number(){
     let max = 3;
     let min = 1;
@@ -13,6 +21,7 @@ function Computer_choise_number(){
 function Computer_choise(){
     let choise = "";
     let n = Computer_choise_number();
+    Compchoise(n);
     if (n === 1){
         choise = "rock"
     }else if (n === 2){
@@ -22,6 +31,13 @@ function Computer_choise(){
     }
     return choise
 }
+
+function Compchoise(n){
+    const choiseImg = document.querySelector('#chImg')
+    choiseImg.src = imagePaths.choisesImgs[n]
+}
+
+
 
 
 let p = 0
@@ -65,22 +81,22 @@ function winner(){
 }
 
 function playGround(){
-    if (p > 0 | r > 0 | s > 0){
-        let winner = winner() ;
+    
+    let winner = winner() ;
 
-        if (winner == "computer"){
-            Computer_score ++;
-        }else if (winner == "player"){
-            Player_score ++;
-        }else{
-            Computer_score += 0.5;
-            Player_score += 0.5;
-        }
-
-        round ++;
-
-        p = 0;
-        r = 0;
-        s = 0;
+    if (winner == "computer"){
+        Computer_score ++;
+    }else if (winner == "player"){
+        Player_score ++;
+    }else{
+        Computer_score += 0.5;
+        Player_score += 0.5;
     }
+
+    round ++;
+
+    p = 0;
+    r = 0;
+    s = 0;
+    
 }
