@@ -1,7 +1,11 @@
 
 let Computer_score = 0;
 let Player_score = 0;
-let round = 0
+let round = 0;
+
+let p = 0;
+let r = 0;
+let s = 0;
 
 const imagePaths = {
     choisesImgs: {
@@ -40,14 +44,22 @@ function Compchoise(n){
 
 
 
-let p = 0
-function paper(){ p += 1 ;playGround();}
+function paper(){
+    p += 1 ;
+    playGround();
+    console.log("the play ground function is running")
+    
+}
 
-let r = 0
-function rock(){ r += 1 ;playGround();}
+function rock(){ r += 1 ;
+    playGround();
+    console.log("the play ground function is running")
+}
 
-let s = 0
-function scissors(){ s += 1 ;playGround();}
+function scissors(){ s += 1 ;
+    playGround();
+    console.log("the play ground function is running")
+}
 
 function Player_choise(p,r,s){
     let choise = ""
@@ -61,7 +73,7 @@ function Player_choise(p,r,s){
     return choise
 }
 
-function winner(){
+function win(){
     let computer = Computer_choise();
     let player = Player_choise(p,r,s);
 
@@ -77,12 +89,13 @@ function winner(){
     }else{
         res = "player"
     }
+    console.log(`the winner is ${res}`)
     return res
 }
 
 function playGround(){
     
-    let winner = winner() ;
+    let winner = win() ;
 
     if (winner == "computer"){
         Computer_score ++;
@@ -98,5 +111,5 @@ function playGround(){
     p = 0;
     r = 0;
     s = 0;
-    
-}
+}    
+
