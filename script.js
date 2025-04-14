@@ -3,6 +3,8 @@ let Computer_score = 0;
 let Player_score = 0;
 let round = 0;
 
+document.getElementById("rounds").innerHTML = `Round ${round}`;
+
 let p = 0;
 let r = 0;
 let s = 0;
@@ -107,9 +109,13 @@ function playGround(){
     }
 
     round ++;
+    document.getElementById("rounds").innerHTML = `Round ${round}`;
+    document.getElementById("C_SC").innerHTML = `${Computer_score}`;
+    document.getElementById("player-score").innerHTML = `${Player_score}`;
 
     p = 0;
     r = 0;
     s = 0;
 }    
+
 
